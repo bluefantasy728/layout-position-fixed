@@ -1,0 +1,46 @@
+@heightHeader: 50px;
+@heightFooter: 70px;
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100vh;
+}
+.header,
+.footer {
+  width: 100%;
+
+  position: fixed;
+  left: 0;
+}
+.header {
+  height: @heightHeader;
+  top: 0;
+  background: deepskyblue;
+}
+.footer {
+  height: @heightFooter;
+  bottom: 0;
+  background: pink;
+}
+.content {
+  position: fixed;
+  top: @heightHeader;
+  left: 0;
+  width: 100%;
+  height: ~'calc(100% - @{heightFooter} - @{heightHeader})';
+  // height: 100% - @heightFooter - @heightHeader;
+  // background: yellowgreen;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px;
+  box-sizing: border-box;
+  ul {
+    // height: 100%;
+  }
+  li {
+    height: 60px;
+  }
+}
